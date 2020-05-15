@@ -1,30 +1,24 @@
-
+import java.util.Scanner;
 
 public class Serie
 {
     // instance variables - replace the example below with your own
-    private int a;
-    private String serie="";
-    static int n=0;
-    static int se=0;
+   
     public static void main (String[]args){
-        String  r=serieNumeros(5);
+        Scanner entrada=new Scanner(System.in);
+        int n=0;
+        System.out.println("ingrese un numero");
+        n=entrada.nextInt();
+        String  r=serieNumeros(n);
         System.out.print(r);
     
-    }
-    
-    public Serie()
-    {
-       n=3;
-       
-    }
-
-    
+  }
     public static  String   serieNumeros (int n)
     {
-
+        String serie="";
+     String nstring="";
         if (n>0){ 
-           System.out.print(n+ ",");
+         System.out.print(n+ " ");
         while (n>1 ){
          
          if (n%2==0 ){
@@ -36,13 +30,17 @@ public class Serie
             n=n*3+1;
          
       }
-      System.out.print(n+ ",");
+      
+      nstring=Integer.toString(n);
+      serie+= nstring;
+      serie+=" ";
+      
     }
     
 }else{
     
     System.out.println(n);
 }
-      return "";
+      return serie ;
     }
 }
